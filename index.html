@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Setters and getters method</h1>
+    <script>
+        const person = {
+            _name: "",
+            _age: 0,
+            get age() {
+                return this._age;
+            },
+            set age(value) {
+                if (typeof value | "number" || value < 0) {
+                    throw new Error("Age must be a positive number");
+                }
+                this._age = value;
+            },
+        };
+
+        person.age = 25;
+        console.log(person.age);
+    </script>
+</body>
+</html>

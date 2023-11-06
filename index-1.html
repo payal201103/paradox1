@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Prototypes method</h1>
+    <script>
+        function person(name,job,yearofbirth){
+            this.name= name;
+            this.job=job;
+            this.yearofbirth=yearofbirth;
+        }
+        person.prototype.calculateAge= function(){
+            console.log('the current age is: ' +(2019 - this.yearofbirth));
+        }
+        console.log(person.prototype);
+
+        let person1= new person('krima', 'IT Engineer' , 1990);
+        console.log(person1)
+        let person2= new person('krishna', 'Civil Engineer' , 1992);
+        console.log(person2)
+
+        person1.calculateAge();
+        person2.calculateAge();
+    </script>
+</body>
+</html>

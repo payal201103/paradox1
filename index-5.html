@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Constructor and new operator</h1>
+    <script>
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.displayName = function () {
+                return this.firstName + ' ' + this.lastName;
+            };
+        }
+
+        function Car(make, model, owner) {
+            this.make = make;
+            this.model = model;
+            this.owner = owner;
+        }
+
+        let Carmen = new Person('Carmen', 'Sayid');
+        let Polly = new Person('Polly', 'Pipe');
+
+        var Jeep = new Car('Jeep', 'Compass Sport', Carmen);
+        var Nissan = new Car('Nissan', '300ZX', Polly);
+
+        console.log(Jeep.owner.displayName());
+        console.log(Nissan.owner.displayName());
+
+    </script>
+</body>
+
+</html>
